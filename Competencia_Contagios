@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 30 16:56:52 2020
+
+@author: josuemena
+"""
+
+#x= int(input("Periodo"))
+#y= int(input("Cantidad de infectados"))
+
+def numContagiados(x1,x2,y1,y2):
+    b=(y2/y1)**(x2-x1)
+    A=y1/(b**x1)
+    print('A:', A)
+    print('b:', b)
+    return A*(b**(30-x2))
+print("La predicción con el modelo de días 10 de marzo y 17 contagios")
+print('Contagiados ',numContagiados(10,12,17,19))
+print("La predicción con el modelo de días 14 de marzo y 28 contagios")
+print('Contagiados ',numContagiados(14,16,28,58))
+print("La predicción con el modelo de días 20 de marzo y 426 contagios")
+print('Contagiados ',numContagiados(20,26,426,1403))
+    

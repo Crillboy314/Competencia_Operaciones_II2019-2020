@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 30 16:23:19 2020
+
+
+#Rodrigo Almeida 00202620
+#Alisson Gualoto 00204026
+#Josue Mena 00216040
+
+"""
+import numpy as np
+import pandas as pd
+df=pd.DataFrame(columns = ['Compra', 'Ahorro'])
+convert_dict = {'Compra': float, 
+                'Ahorro': float}
+df = df.astype(convert_dict) 
+
+
+while True:
+    totalCompra=float(input("Total Compra: "))
+    df2=pd.DataFrame({'Compra':[totalCompra*0.88],'Ahorro':[float(totalCompra*0.12)]})
+    df=df.append(df2,ignore_index=True)
+    
+    ans=input('Recibir otra compra (Y/N): ')
+    if ans=='N' or ans=='n':
+        break
+print(df)
+print(df.sum())
